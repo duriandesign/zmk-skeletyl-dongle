@@ -1,0 +1,116 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_backspace {
+            timeout-ms = <50>;
+            key-positions = <17 16>;
+            bindings = <&kp BACKSPACE>;
+        };
+
+        combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp LEFT_GUI>;
+        };
+
+        combo_space {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp SPACE>;
+        };
+
+        combo_ralt {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp RALT>;
+        };
+
+        combo_return {
+            bindings = <&kp RETURN>;
+            key-positions = <18 19>;
+            timeout-ms = <50>;
+        };
+
+        combo_undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <20 21>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        /* Layer 0: Base keys
+ *
+ * ,-----.-----.-----.-----.-----.                      ,-----.-----.-----.-----.-----.
+ * | Q   | W   | E   | R   | T   |                      | Y   | U   | I   | O   | P   |
+ * |-----+-----+-----+-----+-----|                      |-----+-----+-----+-----+-----|
+ * | A   | S   | D   | F   | G   |                      | H   | J   | K   | L   | ' " | 
+ * |-----+-----+-----+-----+-----+                      |-----+-----+-----+-----+-----|
+ * |SHF/Z| X   | C   | V   | B   |                      | N   | M   | < , | > . |SHF/?|
+ * `-----'-----'-----'-----'-----'                      `-----'-----'-----'-----'-----'
+ *               .-------.-------.-------.      .-------.-------.-------.   
+ *               |  L1   |CMD/ESC|  SPC  |      |  BSP  |OPT/RET|  L2   |
+ *               '-------'-------'-------'      '-------'-------'-------' 
+ */
+
+        default_layer {
+            bindings = <
+&kp Q        &kp W               &kp E           &kp R           &kp T                   &kp Y        &kp U               &kp I            &kp O                &kp P
+&kp A        &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_GUI F  &kp G                   &kp H        &mt RIGHT_GUI J     &mt RIGHT_ALT K  &mt RIGHT_CONTROL L  &mt F13 SINGLE_QUOTE
+&mt LSHFT Z  &mt LG(X) X         &mt LG(C) C     &mt LG(V) V     &kp B                   &mt UNDER N  &mt RS(RG(M)) M     &mt SEMI COMMA   &mt COLON PERIOD     &mt RSHFT FSLH
+                                 &lt 1 SPACE     &mt LCMD ESC    &mt LEFT_CONTROL TAB    &lt 3 ENTER  &mt RALT BACKSPACE  &lt 2 SPACE
+            >;
+        };
+
+        left_layer {
+            bindings = <
+&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+&kp GRAVE       &kp HOME      &kp PAGE_UP   &kp PAGE_DOWN  &kp END         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp SEMI
+&kp LEFT_SHIFT  &kp DELETE    &kp SPACE     &kp BACKSPACE  &kp TAB         &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &mt RSHFT BACKSLASH
+                              &trans        &trans         &trans          &trans        &trans        &trans
+            >;
+        };
+
+        right_layer {
+            bindings = <
+&kp F1              &kp F2          &kp F3           &kp F4             &kp F5        &kp F6      &kp F7             &kp F8           &kp F9                &kp F10
+&kp F11             &kp F12         &kp C_PREV       &kp C_PLAY_PAUSE   &kp C_NEXT    &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
+&kp LA(LG(ESCAPE))  &kp SCROLLLOCK  &kp PAUSE_BREAK  &kp LS(LA(LG(V)))  &kp INSERT    &kp ENTER   &kp DELETE         &kp SPACE        &kp BACKSPACE         &kp RG(RS(RC(NUMBER_4)))
+                                    &trans           &trans             &trans        &trans      &trans             &trans
+            >;
+        };
+
+        tri_layer {
+            bindings = <
+&kp EXCLAMATION  &kp AT         &kp HASH      &kp DOLLAR            &kp PERCENT              &kp PLUS                &kp MINUS              &kp ASTERISK              &kp SLASH     &kp RG(RA(K_POWER))
+&kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp RC(RA(LEFT_ARROW))  &kp RC(RA(RIGHT))      &kp K_VOL_UP              &kp K_MUTE    &kp RG(RC(Q))
+&bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_CLR            &trans                   &kp RC(RA(ENTER))       &kp RC(RS(RA(ENTER)))  &kp K_VOL_DN              &out OUT_USB  &out OUT_BLE
+                                &trans        &trans                &trans                   &trans                  &kp RG(RA(ENTER))      &kp RC(RS(RA(UP_ARROW)))
+            >;
+        };
+    };
+};
