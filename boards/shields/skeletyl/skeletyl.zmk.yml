@@ -10,3 +10,6 @@ features:
 siblings:
   - skeletyl_left
   - skeletyl_right
+  - skeletyl_central_dongle
+  - skeletyl_peripheral_left
+  - skeletyl_peripheral_right
