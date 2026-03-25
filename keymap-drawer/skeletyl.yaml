@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: skeletyl}
 layers:
-  default:
+  Base:
   - Q
   - W
   - E
@@ -31,13 +31,13 @@ layers:
   - {t: ',', h: ;, s: <}
   - {t: ., h: ':'}
   - {t: /, h: '$$mdi:apple-keyboard-shift$$', s: '?'}
-  - {t: '$$mdi:keyboard-space$$', h: left}
+  - {t: '$$mdi:keyboard-space$$', h: Num/Nav}
   - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '$$mdi:keyboard-return$$', h: tri}
+  - {t: '$$mdi:keyboard-return$$', h: Sym/BT}
   - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: '$$mdi:keyboard-space$$', h: right}
-  left:
+  - {t: '$$mdi:keyboard-space$$', h: Fn/Media}
+  Num/Nav:
   - '1'
   - '2'
   - '3'
@@ -74,7 +74,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  right:
+  Fn/Media:
   - F1
   - F2
   - F3
@@ -111,7 +111,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  tri:
+  Sym/BT:
   - '!'
   - '@'
   - '#'
