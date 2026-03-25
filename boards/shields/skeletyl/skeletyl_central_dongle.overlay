@@ -5,6 +5,8 @@
 
 #include "skeletyl.dtsi"
 
+/delete-node/ &kscan0;
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
