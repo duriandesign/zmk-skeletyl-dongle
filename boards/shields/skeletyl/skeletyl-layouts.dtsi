@@ -1,0 +1,51 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    skeletyl_layout: skeletyl_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Skeletyl";
+        transform = <&default_transform>;
+        keys  //                     w   h    x    y     rot    rx    ry
+            /* Row 0 */
+            = <&key_physical_attrs 100 100    0   42       0     0     0>  /* RC(0,0) pinky L */
+            , <&key_physical_attrs 100 100  100   16       0     0     0>  /* RC(0,1) ring L */
+            , <&key_physical_attrs 100 100  200    0       0     0     0>  /* RC(0,2) middle L */
+            , <&key_physical_attrs 100 100  300   26       0     0     0>  /* RC(0,3) index L */
+            , <&key_physical_attrs 100 100  400   52       0     0     0>  /* RC(0,4) inner L */
+            , <&key_physical_attrs 100 100  500   52       0     0     0>  /* RC(0,5) inner R */
+            , <&key_physical_attrs 100 100  600   26       0     0     0>  /* RC(0,6) index R */
+            , <&key_physical_attrs 100 100  700    0       0     0     0>  /* RC(0,7) middle R */
+            , <&key_physical_attrs 100 100  800   16       0     0     0>  /* RC(0,8) ring R */
+            , <&key_physical_attrs 100 100  900   42       0     0     0>  /* RC(0,9) pinky R */
+            /* Row 1 */
+            , <&key_physical_attrs 100 100    0  142       0     0     0>  /* RC(1,0) */
+            , <&key_physical_attrs 100 100  100  116       0     0     0>  /* RC(1,1) */
+            , <&key_physical_attrs 100 100  200  100       0     0     0>  /* RC(1,2) */
+            , <&key_physical_attrs 100 100  300  126       0     0     0>  /* RC(1,3) */
+            , <&key_physical_attrs 100 100  400  152       0     0     0>  /* RC(1,4) */
+            , <&key_physical_attrs 100 100  500  152       0     0     0>  /* RC(1,5) */
+            , <&key_physical_attrs 100 100  600  126       0     0     0>  /* RC(1,6) */
+            , <&key_physical_attrs 100 100  700  100       0     0     0>  /* RC(1,7) */
+            , <&key_physical_attrs 100 100  800  116       0     0     0>  /* RC(1,8) */
+            , <&key_physical_attrs 100 100  900  142       0     0     0>  /* RC(1,9) */
+            /* Row 2 */
+            , <&key_physical_attrs 100 100    0  242       0     0     0>  /* RC(2,0) */
+            , <&key_physical_attrs 100 100  100  216       0     0     0>  /* RC(2,1) */
+            , <&key_physical_attrs 100 100  200  200       0     0     0>  /* RC(2,2) */
+            , <&key_physical_attrs 100 100  300  226       0     0     0>  /* RC(2,3) */
+            , <&key_physical_attrs 100 100  400  252       0     0     0>  /* RC(2,4) */
+            , <&key_physical_attrs 100 100  500  252       0     0     0>  /* RC(2,5) */
+            , <&key_physical_attrs 100 100  600  226       0     0     0>  /* RC(2,6) */
+            , <&key_physical_attrs 100 100  700  200       0     0     0>  /* RC(2,7) */
+            , <&key_physical_attrs 100 100  800  216       0     0     0>  /* RC(2,8) */
+            , <&key_physical_attrs 100 100  900  242       0     0     0>  /* RC(2,9) */
+            /* Thumbs (transform order: RC(3,2) RC(3,3) RC(3,0)  RC(3,9) RC(3,6) RC(3,7)) */
+            , <&key_physical_attrs 100 100  150  340       0     0     0>  /* RC(3,2) outer-L thumb */
+            , <&key_physical_attrs 100 100  262  362       0     0     0>  /* RC(3,3) mid-L thumb */
+            , <&key_physical_attrs 100 100  375  340       0     0     0>  /* RC(3,0) inner-L thumb */
+            , <&key_physical_attrs 100 100  525  340       0     0     0>  /* RC(3,9) inner-R thumb */
+            , <&key_physical_attrs 100 100  638  362       0     0     0>  /* RC(3,6) mid-R thumb */
+            , <&key_physical_attrs 100 100  750  340       0     0     0>  /* RC(3,7) outer-R thumb */
+            ;
+    };
+};
